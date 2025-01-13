@@ -1,0 +1,17 @@
+{% extends 'mainApp/base.html' %}
+
+{% block content %}
+
+<h3>Tópico: {{topico}}</h3> 
+<!-- a variável vai corresponder à chave do dicionário -->
+<h4>Anotações: </h4>
+<ul>
+    {% for n in notes %}
+    <li>{{n.date_added | date:'M d, Y H:i'}}</li>
+    <li>{{n | linebreaks}}</li>
+    {% empty %}
+    <li>Não há anotações criadas.</li>
+    {% endfor %}
+</ul>
+
+{% endblock content %}

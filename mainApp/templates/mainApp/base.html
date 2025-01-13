@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- carrega a pasta de arquivos estáticos(css, imagens, etc) -->
+    {% load static %} 
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <title>Página Inicial</title>
+</head>
+<body>
+    <header>
+        <a href="{% url 'index' %}"><h1>Life Manegement</h1></a>
+        <nav>
+            <ol>
+                <a href="{% url 'index' %}"><li>Registrar</li></a>
+                <a href="{% url 'index' %}"><li>Entrar</li></a>
+            </ol>
+        </nav>
+    </header>
+<main>
+    {% block content %}{% endblock content %}
+</main>
+<footer>
+    <p>© 2025 Life Management, by Antônio Irineu Filho</p>
+    <figure class="github_icon">
+        <a href="https://github.com/AntonioIrineuFilho"><img src = "{% static 'imagens/github.png' %}"></a>
+    </figure>
+</footer>
+</body>
+</html>

@@ -1,0 +1,25 @@
+{% extends 'mainApp/base.html' %}
+
+{% block content %} 
+
+<style>
+    ul {
+        margin-left: 3em;
+    }
+    li {
+        margin-top: 0.8em;
+    }
+
+</style>
+
+<h2>Tópicos:</h2>
+<ul>
+    {% for t in topicos %}
+    <li><a href="{% url 'topico' id_topico=t.id %}">{{t}}</li></a>
+    {% empty %}
+    <li>Nenhum tópico adicionado.</li>
+    {% endfor %}
+
+</ul>
+
+{% endblock content %}
