@@ -35,23 +35,37 @@ class Tabela(Model.models) -> cria uma tabela
 ### DENTRO DA CLASS	
 
 campo = models.CharField(max_length=x) -> campo do BD do tipo varchar
+
 campo = models.TextField() -> campo do BD do tipo string longa
+
 campo = models.IntegerField() -> campo do BD do tipo num inteiro
+
 campo = models.FloatField() -> campo do BD do tipo decimal
+
 campo = models.DecimalField(max_digits=x, decimal_places=y) -> campo do BD do tipo decimal, com especificação do total de digitos e do total de digitos após a virgula
+
 campo = models.BooleanField() -> campo do BD do tipo true ou false
+
 campo = models.DateField() -> campo do BD do tipo data
+
 campo = models.DatetTmeField() -> campo do BD do tipo data + horas, caso queira preencher com o datetime do momento da adição de algo no BD, basta passar como parametro "auto_now_add=True"
+
 campo = models.EmailField() -> campo do BD do tipo email
+
 campo = models.URLField() -> campo do BD dque armazena uma URL
+
 campo = models.FileField(upload_to='documentos/') -> campo do BD que armazena o link de um arquivo, deve ser especificado o diretorio
+
 campo = models.ImageField(upload_to='documentos/') -> campo do BD que armazena o link de uma imagem, deve ser especificado o diretorio
+
 campo = models.ForeignKey(Modelo, on_delete=models.CASCADE/NULL/PROTECT/etc) -> define o id de uma instância de outra tabela como chave estrangeira, definindo, em caso de exclusão da instância, o que fazer com os objetos da tabela filha.
 
 ### COMANDOS PARA MANIPULAÇÃO DOS MODELOS
 
 Modelo.objects.all() -> retorna uma lista com todas as instâncias do modelo
+
 Modelo.objects.get(id=valor) -> retorna um objeto especifico
+
 Objeto.modeloFilho_set.all() -> retorna uma lista com os objetos de uma tabela filha do objeto em questão(relação de chave estrangeira)
 
 ## COMANDOS PYTHON DENTRO DO HTML
